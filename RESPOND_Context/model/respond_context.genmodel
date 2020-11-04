@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/RESPOND_Context/src-gen" creationIcons="false"
+    editDirectory="/RESPOND_Context.edit/src-gen" editorDirectory="/RESPOND_Context.editor/src-gen"
+    modelPluginID="RESPOND_Context" modelName="Respond_context" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>respond_context.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Respond_context" disposableProviderFactory="true" ecorePackage="respond_context.ecore#/">
+    <genClasses ecoreClass="respond_context.ecore#//Plant">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference respond_context.ecore#//Plant/realEntities"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference respond_context.ecore#//Plant/virtualEntities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="respond_context.ecore#//RespondNode"/>
+    <nestedGenPackages prefix="Real" disposableProviderFactory="true" ecorePackage="respond_context.ecore#//real">
+      <genClasses image="false" ecoreClass="respond_context.ecore#//real/RealEntity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute respond_context.ecore#//real/RealEntity/location"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/Machine">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Machine/requires"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Machine/consistsOf"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Machine/has"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Machine/hasState"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/MachineObject">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/MachineObject/hasState"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/Product">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Product/components"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/Resource">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Resource/hasState"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/RealRespondNode">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/RealRespondNode/manages"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/RealRespondNode/hasState"/>
+      </genClasses>
+      <genClasses ecoreClass="respond_context.ecore#//real/Component">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference respond_context.ecore#//real/Component/requires"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Virtual" disposableProviderFactory="true" ecorePackage="respond_context.ecore#//virtual">
+      <genClasses ecoreClass="respond_context.ecore#//virtual/State"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/ObjectState"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/RessourceState"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/VirtualEntity"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/NodeState"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/MachineState"/>
+      <genClasses ecoreClass="respond_context.ecore#//virtual/VirtualRespondNode"/>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages prefix="RESPOND_Base" ecorePackage="../../RESPOND_Base/model/RESPOND_Base.ecore#/">
+    <genClasses image="false" ecoreClass="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity"/>
+    <genClasses image="false" ecoreClass="../../RESPOND_Base/model/RESPOND_Base.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../RESPOND_Base/model/RESPOND_Base.ecore#//Identifier/id"/>
+    </genClasses>
+    <genClasses ecoreClass="../../RESPOND_Base/model/RESPOND_Base.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../RESPOND_Base/model/RESPOND_Base.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

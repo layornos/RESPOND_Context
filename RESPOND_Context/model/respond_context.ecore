@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="contextmodel" nsURI="de.respond-iot.context" nsPrefix="de.respond-iot.context">
+  <eClassifiers xsi:type="ecore:EClass" name="Plant" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realEntities" upperBound="-1"
+        eType="#//real/RealEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="virtualEntities" upperBound="-1"
+        eType="#//virtual/VirtualEntity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RespondNode" abstract="true" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity"/>
+  <eSubpackages name="real" nsURI="de.respond-iot.context.real" nsPrefix="de.respond-iot.context.real">
+    <eClassifiers xsi:type="ecore:EClass" name="RealEntity" abstract="true" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Machine" eSuperTypes="#//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+          eType="#//real/Resource" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" upperBound="-1"
+          eType="#//real/MachineObject" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1"
+          eType="#//real/RealRespondNode" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
+          eType="#//virtual/MachineState" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MachineObject" eSuperTypes="#//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
+          eType="#//virtual/ObjectState" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+          eType="#//real/Component" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
+          eType="#//virtual/RessourceState" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealRespondNode" eSuperTypes="#//RespondNode #//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manages" upperBound="-1"
+          eType="#//real/MachineObject" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
+          eType="#//virtual/NodeState" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//real/RealEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+          eType="#//real/Resource" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="virtual" nsURI="de.respond-iot.context.virtual" nsPrefix="de.respond-iot.context.virtual">
+    <eClassifiers xsi:type="ecore:EClass" name="State" abstract="true" eSuperTypes="#//virtual/VirtualEntity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectState" eSuperTypes="#//virtual/State"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RessourceState" eSuperTypes="#//virtual/State"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualEntity" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NodeState" eSuperTypes="#//virtual/State"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MachineState" eSuperTypes="#//virtual/State"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualRespondNode" eSuperTypes="#//virtual/VirtualEntity #//RespondNode"/>
+  </eSubpackages>
+</ecore:EPackage>
