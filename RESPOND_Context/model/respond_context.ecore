@@ -22,10 +22,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
           eType="#//virtual/MachineState" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MachineObject" eSuperTypes="#//real/RealEntity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hasState" lowerBound="1"
-          eType="#//virtual/ObjectState" containment="true"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MachineObject" eSuperTypes="#//real/RealRespondNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//real/RealEntity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
           eType="#//real/Component" containment="true"/>

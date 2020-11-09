@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/RESPOND_Roles/src-gen" creationIcons="false" editDirectory="/RESPOND_Roles.edit/src-gen"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/RESPOND_Roles/src-gen" editDirectory="/RESPOND_Roles.edit/src-gen"
     editorDirectory="/RESPOND_Roles.editor/src-gen" modelPluginID="RESPOND_Roles"
-    modelName="RESPOND_Roles" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
-  <foreignModel>rESPOND_Roles.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="RESPOND_Roles" disposableProviderFactory="true" ecorePackage="rESPOND_Roles.ecore#/"/>
+    modelName="Respond_roles" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/RESPOND_Roles.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../RESPOND_Base/model/RESPOND_Base.genmodel#//RESPOND_Base ../../RESPOND_Context/model/respond_context.genmodel#//contextmodel"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>respond_roles.ecore</foreignModel>
+  <genPackages prefix="Roles" disposableProviderFactory="true" ecorePackage="respond_roles.ecore#/">
+    <genClasses ecoreClass="respond_roles.ecore#//Role">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference respond_roles.ecore#//Role/virtualResponsibilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference respond_roles.ecore#//Role/physicalResponsibilities"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference respond_roles.ecore#//Role/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="respond_roles.ecore#//Person">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference respond_roles.ecore#//Person/hasRoles"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference respond_roles.ecore#//Person/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="respond_roles.ecore#//RoleList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference respond_roles.ecore#//RoleList/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="respond_roles.ecore#//PersonList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference respond_roles.ecore#//PersonList/persons"/>
+    </genClasses>
+    <genClasses ecoreClass="respond_roles.ecore#//StaffSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference respond_roles.ecore#//StaffSpecification/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference respond_roles.ecore#//StaffSpecification/persons"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

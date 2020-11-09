@@ -1,1 +1,14 @@
 /.metadata/
+*.edit
+*.editor
+*.tests
+*/bin/
+*/META-INF/
+*.bak
+*/src-gen/
+*/plugin.properties
+*/plugin.xml
+*/build.properties
+*/.classpath/
+*.jpg
+Eclipse.app
