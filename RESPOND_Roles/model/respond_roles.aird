@@ -2,11 +2,8 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_OZcdQCJoEeu-orDkRLNuoA" selectedViews="_OcxeECJoEeu-orDkRLNuoA" version="14.3.1.202003261200">
     <semanticResources>platform:/resource/RESPOND_Context/model/respond_context.ecore</semanticResources>
-    <semanticResources>platform:/resource/RESPOND_Base/model/RESPOND_Base.ecore</semanticResources>
     <semanticResources>respond_roles.ecore</semanticResources>
-    <semanticResources>respond_roles.genmodel.bak</semanticResources>
     <semanticResources>platform:/resource/RESPOND_Context/model/respond_context.genmodel</semanticResources>
-    <semanticResources>platform:/resource/RESPOND_Base/model/RESPOND_Base.genmodel</semanticResources>
     <semanticResources>respond_roles.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_OcxeECJoEeu-orDkRLNuoA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>

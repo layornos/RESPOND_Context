@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/RESPOND_Correspondence/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/RESPOND_Correspondence/src-gen" creationIcons="false"
     editDirectory="/RESPOND_Correspondence.edit/src-gen" editorDirectory="/RESPOND_Correspondence.editor/src-gen"
     modelPluginID="RESPOND_Correspondence" modelName="RESPOND_Correspondence" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>rESPOND_Correspondence.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="RESPOND_Correspondence" disposableProviderFactory="true" ecorePackage="rESPOND_Correspondence.ecore#/"/>
+  <genPackages prefix="RESPOND_Correspondence" disposableProviderFactory="true" ecorePackage="rESPOND_Correspondence.ecore#/">
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//ActivityToContextCorrespondence">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//ActivityToContextCorrespondence/respondnode"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//ActivityToContextCorrespondence/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Task"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Correspondence">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//Correspondence/activitytocontextcorrespondence"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//Correspondence/failingactivitytohealingprocess"/>
+    </genClasses>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//RespondNode"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//FailingActivityToHealingProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//FailingActivityToHealingProcess/failingactivity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//FailingActivityToHealingProcess/healingprocess"/>
+    </genClasses>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//FailingTask"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//HealingProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//HealingProcess/drawback"/>
+    </genClasses>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Drawback"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Performance"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Reliability"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//Security"/>
+    <genClasses ecoreClass="rESPOND_Correspondence.ecore#//SelfHealingService">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rESPOND_Correspondence.ecore#//SelfHealingService/correspondences"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>
