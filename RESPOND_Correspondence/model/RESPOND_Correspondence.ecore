@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RESPOND_Correspondence" nsURI="http://www.respont-iot.de/correspondence_model"
+    nsPrefix="RESPOND_Correspondence">
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityToContextCorrespondence" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="respondnode" eType="#//RespondNode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="#//Task" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Correspondence" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activitytocontextcorrespondence"
+        upperBound="-1" eType="#//ActivityToContextCorrespondence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failingactivitytohealingprocess"
+        upperBound="-1" eType="#//FailingActivityToHealingProcess" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RespondNode" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FailingActivityToHealingProcess" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failingactivity" lowerBound="1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="healingprocess" upperBound="-1"
+        eType="#//HealingProcess" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="taskID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FailingTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failureID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HealingProcess" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drawback" upperBound="-1"
+        eType="#//Drawback" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Drawback" abstract="true" interface="true"
+      eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Performance" eSuperTypes="#//Drawback"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Reliability" eSuperTypes="#//Drawback"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Security" eSuperTypes="#//Drawback"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelfHealingService" eSuperTypes="../../RESPOND_Base/model/RESPOND_Base.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondences" upperBound="-1"
+        eType="#//Correspondence" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
